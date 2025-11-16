@@ -2,6 +2,8 @@ package sprint3Tasca_S302Nivel1;
 
 import sprint3Tasca_S302Nivel1.Builder.PizzaBuilder;
 
+
+
 /**
  * ClassName: MestrePizzer
  * Package: sprint3Tasca_S302Nivel1
@@ -12,11 +14,25 @@ import sprint3Tasca_S302Nivel1.Builder.PizzaBuilder;
  */
 public class MestrePizzer {
     private PizzaBuilder pizzaBuilder;
-    public Pizza buildPizza(int size,Dough dough) {
-        return this.pizzaBuilder.buildSize(size).buildDough(dough).getResult();
+
+    public MestrePizzer(PizzaBuilder pizzaBuilder) {
+        this.pizzaBuilder = pizzaBuilder;
+    }
+
+    public Pizza buildPizza(int size, Dough dough, Toppings... extraToppings) {
+        this.pizzaBuilder.buildSize(size).buildDough(dough);
+        for (Toppings topping : extraToppings) {
+           this.pizzaBuilder.addTopping(topping);
+        }
+        return this.pizzaBuilder.getResult();
     }
 
     public void setPizzaBuilder(PizzaBuilder pizzaBuilder) {
         this.pizzaBuilder = pizzaBuilder;
+    }
+
+
+    public void clearBuilder() {
+        this.pizzaBuilder.clear();
     }
 }
