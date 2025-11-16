@@ -1,8 +1,11 @@
 package sprint3Tasca_S302Nivel1.Builder;
 
+import sprint3Tasca_S302Nivel1.Dough;
 import sprint3Tasca_S302Nivel1.Pizza;
+import sprint3Tasca_S302Nivel1.Toppings;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,9 +18,13 @@ import java.util.List;
  */
 public class HawaiianPizzaBuilder implements PizzaBuilder {
     private int size;
-    private String dough;
-    private List<String> toppings = new ArrayList<>();
-    Pizza pizza;
+    private Dough dough;
+    private List <Toppings> toppings = new ArrayList<>();
+
+    public HawaiianPizzaBuilder() {
+        toppings.addAll(Arrays.asList(Toppings.HAM,Toppings.PINEAPPLE,Toppings.CHEESE));
+    }
+
     @Override
     public PizzaBuilder buildSize(int size) {
         this.size = size;
@@ -25,19 +32,27 @@ public class HawaiianPizzaBuilder implements PizzaBuilder {
     }
 
     @Override
-    public PizzaBuilder buildDough(String dough){
+    public PizzaBuilder buildDough(Dough dough){
         this.dough = dough;
         return this;
     }
 
     @Override
-    public PizzaBuilder addTopping(String topping) {
-        this.toppings.add(topping);
+    public PizzaBuilder addTopping(Toppings topping) {
+        toppings.add(topping);
         return this;
     }
 
     @Override
     public Pizza getResult() {
-        return new Pizza(size,dough,toppings);
+        return new Pizza(size,dough,new ArrayList<>(toppings));
+    }
+
+    @Override
+    public void clear() {
+        toppings.clear();
+        size = 0;
+        dough = null;
+        toppings.addAll(Arrays.asList(Toppings.HAM,Toppings.PINEAPPLE,Toppings.CHEESE));
     }
 }

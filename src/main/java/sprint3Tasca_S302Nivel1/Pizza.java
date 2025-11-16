@@ -14,10 +14,10 @@ import java.util.Objects;
  */
 public class Pizza {
     private final int size;
-    private final String dough;
-    private final List <String> toppings;
+    private final Dough dough;
+    private final List <Toppings> toppings;
 
-    public Pizza(int size, String dough,List<String> toppings) {
+    public Pizza(int size, Dough dough,List<Toppings> toppings) {
         this.size = size;
         this.dough = dough;
         this.toppings = List.copyOf(toppings);
@@ -27,11 +27,11 @@ public class Pizza {
         return size;
     }
 
-    public String getDough() {
+    public Dough getDough() {
         return dough;
     }
 
-    public List<String> getToppings() {
+    public List<Toppings> getToppings() {
         return new ArrayList<>(toppings);
     }
 
