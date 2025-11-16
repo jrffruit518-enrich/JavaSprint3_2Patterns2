@@ -1,4 +1,6 @@
-package sprint3Tasca_S302Nivel1;
+package sprint3Tasca_S302Nivel1.Builder;
+
+import sprint3Tasca_S302Nivel1.Pizza;
 
 /**
  * ClassName: PizzaBuilder
@@ -13,5 +15,4 @@ public interface PizzaBuilder {
     public PizzaBuilder buildDough(String dough);
     public PizzaBuilder addTopping(String tipping);
     public Pizza getResult();
-
 }
