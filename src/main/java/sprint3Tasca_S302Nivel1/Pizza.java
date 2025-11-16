@@ -1,5 +1,6 @@
 package sprint3Tasca_S302Nivel1;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -31,7 +32,18 @@ public class Pizza {
     }
 
     public List<String> getTopping() {
-        return topping;
+        return new ArrayList<>(topping);
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setDough(String dough) {
+        this.dough = dough;
+    }
+    public void addTopping(String topping) {
+        this.topping.add(topping);
     }
 
     @Override
