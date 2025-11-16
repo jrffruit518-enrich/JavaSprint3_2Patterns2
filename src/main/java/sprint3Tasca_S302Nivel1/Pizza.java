@@ -13,14 +13,14 @@ import java.util.Objects;
  * Version:v1.0
  */
 public class Pizza {
-    private int size;
-    private String dough;
-    List <String> topping;
+    private final int size;
+    private final String dough;
+    private final List <String> toppings;
 
-    public Pizza(int size, String dough, List<String> topping) {
+    public Pizza(int size, String dough,List<String> toppings) {
         this.size = size;
         this.dough = dough;
-        this.topping = topping;
+        this.toppings = List.copyOf(toppings);
     }
 
     public int getSize() {
@@ -31,31 +31,21 @@ public class Pizza {
         return dough;
     }
 
-    public List<String> getTopping() {
-        return new ArrayList<>(topping);
+    public List<String> getToppings() {
+        return new ArrayList<>(toppings);
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public void setDough(String dough) {
-        this.dough = dough;
-    }
-    public void addTopping(String topping) {
-        this.topping.add(topping);
-    }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Pizza pizza = (Pizza) o;
-        return size == pizza.size && Objects.equals(dough, pizza.dough) && Objects.equals(topping, pizza.topping);
+        return size == pizza.size && Objects.equals(dough, pizza.dough) && Objects.equals(toppings, pizza.toppings);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, dough, topping);
+        return Objects.hash(size, dough, toppings);
     }
 
     @Override
@@ -63,7 +53,7 @@ public class Pizza {
         return "Pizza{" +
                 "size=" + size +
                 ", dough='" + dough + '\'' +
-                ", topping=" + topping +
+                ", topping=" + toppings +
                 '}';
     }
 }
