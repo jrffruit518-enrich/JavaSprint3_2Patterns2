@@ -11,5 +11,5 @@ import sprint3Tasca_S302Nivel2.StockState;
  * Version:v1.0
  */
 public interface Observer {
- public void update(StockState stockState);
+ public void update(StockState stockState ,int stockIndex);
 }
