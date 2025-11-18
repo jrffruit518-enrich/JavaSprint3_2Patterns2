@@ -15,6 +15,7 @@ import sprint3Tasca_S302Nivel1.Toppings;
 public interface PizzaBuilder {
     public PizzaBuilder buildSize(int size);
     public PizzaBuilder buildDough(Dough dough);
+    //Selected optional toppings
     public PizzaBuilder addTopping(Toppings topping); //for client add extra toppings
     public Pizza getResult();
     public void clear();

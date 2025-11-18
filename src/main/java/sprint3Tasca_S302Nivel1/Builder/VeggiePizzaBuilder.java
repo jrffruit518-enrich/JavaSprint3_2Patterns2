@@ -21,6 +21,7 @@ public class VeggiePizzaBuilder implements PizzaBuilder{
     private Dough dough;
     private List<Toppings> toppings = new ArrayList<>();
 
+    //A Veggie　Pizza using the core ingredients
     public VeggiePizzaBuilder() {
         toppings.addAll(Arrays.asList(Toppings.VEGETABLE,Toppings.OLIVES,Toppings.CHEESE));
     }
@@ -37,6 +38,7 @@ public class VeggiePizzaBuilder implements PizzaBuilder{
         return this;
     }
 
+    //Selected optional toppings
     @Override
     public PizzaBuilder addTopping(Toppings topping) {
         toppings.add(topping);

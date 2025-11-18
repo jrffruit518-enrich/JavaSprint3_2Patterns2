@@ -21,6 +21,7 @@ public class HawaiianPizzaBuilder implements PizzaBuilder {
     private Dough dough;
     private List <Toppings> toppings = new ArrayList<>();
 
+    //A Hawaiian Pizza using the core ingredients
     public HawaiianPizzaBuilder() {
         toppings.addAll(Arrays.asList(Toppings.HAM,Toppings.PINEAPPLE,Toppings.CHEESE));
     }
@@ -36,7 +37,7 @@ public class HawaiianPizzaBuilder implements PizzaBuilder {
         this.dough = dough;
         return this;
     }
-
+    //Selected optional toppings
     @Override
     public PizzaBuilder addTopping(Toppings topping) {
         toppings.add(topping);
