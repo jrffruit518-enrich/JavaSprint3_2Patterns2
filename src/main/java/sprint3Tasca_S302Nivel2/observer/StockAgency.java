@@ -1,6 +1,7 @@
 package sprint3Tasca_S302Nivel2.observer;
 
 import sprint3Tasca_S302Nivel2.StockState;
+import sprint3Tasca_S302Nivel2.Subject;
 
 /**
  * ClassName: StockAgency
@@ -15,15 +16,20 @@ public class StockAgency implements Observer{
     private int stockIndex;
 
     @Override
-    public void update(StockState stockState ,int stockIndex) {
+    public void updatePush(StockState stockState,int stockIndex) {
         this.stockState = stockState;
         this.stockIndex = stockIndex;
         display();
-
     }
 
     public void display() {
-        System.out.println("The stock state is " + stockState);
-        System.out.println("The stock index now is " + stockIndex);
+        System.out.println("StockAgency : The stock state is " + stockState);
+        System.out.println("StockAgency : The stock index now is " + stockIndex);
+        System.out.println();
+    }
+
+    @Override
+    public void updatePull(Subject subject) {
+
     }
 }
