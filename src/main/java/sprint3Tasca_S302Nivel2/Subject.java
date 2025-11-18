@@ -12,7 +12,9 @@ import sprint3Tasca_S302Nivel2.observer.Observer;
 *
 */
 public interface Subject {
+   //Interfaz utilizado únicamente para demostrar la implementación de los todos push y pull
    public void register(Observer observer);
    public void remove(Observer observer);
-   public void inform();
+   public void notifyObserversPush();
+   public void notifyObserversPull();
 }
