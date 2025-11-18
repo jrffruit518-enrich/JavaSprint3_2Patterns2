@@ -1,4 +1,4 @@
-# Sprint3Tasca_S302Nivel2 - Patrón Builder: Gestión de Pizzas Personalizadas
+# Sprint3Tasca_S302Nivel1 - Patrón Builder: Gestión de Pizzas Personalizadas
 ## Descripción - Enunciado del ejercicio
 
 Este proyecto implementa en Java un gestor de pizzas personalizadas utilizando el patrón de diseño Builder.
