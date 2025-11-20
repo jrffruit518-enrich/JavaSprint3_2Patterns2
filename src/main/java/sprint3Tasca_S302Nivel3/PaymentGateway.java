@@ -1,4 +1,4 @@
-package sprint3Tasca_S302Nivel３;
+package sprint3Tasca_S302Nivel3;
 
 public class PaymentGateway {
     public void payment(PaymentMethod paymentMethod, double amount) {
