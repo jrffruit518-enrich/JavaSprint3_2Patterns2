@@ -1,0 +1,12 @@
+@startuml
+interface PaymentMethod
+class creditPay implements PaymentMethod
+class cashPay implements PaymentMethod
+
+class PaymentGateway
+class shoeStore
+
+PaymentGateway o--> PaymentMethod
+shoeStore -->  PaymentGateway
+
+@enduml
