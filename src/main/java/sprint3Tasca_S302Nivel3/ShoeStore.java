@@ -1,6 +1,8 @@
 package sprint3Tasca_S302Nivel3;
 
-public class ShoeStore {
+import sprint3Tasca_S302Nivel3.PaymentMethod.PaymentMethod;
+
+public class ShoeStore implements PaymentCallback{
     private PaymentGateway paymentGateway;
 
     public ShoeStore(PaymentGateway paymentGateway) {
@@ -17,7 +19,16 @@ public class ShoeStore {
 
     public void checkout(PaymentMethod method, double price) {
         System.out.println("The shoe store is processing the purchase.");
-        paymentGateway.payment(method,price);
+        paymentGateway.payment(method,price,this);
     }
 
+    @Override
+    public void onPaymentSuccess() {
+        System.out.println("The payment is successful. The goods can be delivered");
+    }
+
+    @Override
+    public void onPaymentFailed() {
+        System.out.println("The payment is failed. The goods can't be delivered");
+    }
 }
